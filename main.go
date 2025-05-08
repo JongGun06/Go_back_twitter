@@ -21,8 +21,7 @@ import (
 
 // MongoDB конфигурация
 const (
-	// mongoURI = "mongodb+srv://nagidevfullstack:Hadi2017g@golangdb.ebvlakf.mongodb.net/?retryWrites=true&w=majority&appName=GolangDB"
-	mongoURI     = os.Getenv("mongodb+srv://nagidevfullstack:Hadi2017g@golangdb.ebvlakf.mongodb.net/?retryWrites=true&w=majority&appName=GolangDB")
+	mongoURI = "mongodb+srv://nagidevfullstack:Hadi2017g@golangdb.ebvlakf.mongodb.net/?retryWrites=true&w=majority&appName=GolangDB"
 	databaseName = "TodoListONGolang"
 	collectionUser    = "users"
 	collectionPost    = "posts"
@@ -188,12 +187,7 @@ func main() {
 	fmt.Println("Connected to MongoDB!")
 
 	// Настройка Cloudinary
-	// cld, err = cloudinary.NewFromParams("ddtq1ack5", "845634458425448", "ZTt9tU5JtlAhH5pwfYIU7dMYmzU")
-	cld, err = cloudinary.NewFromParams(
-		os.Getenv("ddtq1ack5"),
-		os.Getenv("845634458425448"),
-		os.Getenv("ZTt9tU5JtlAhH5pwfYIU7dMYmzU"),
-	)
+	cld, err = cloudinary.NewFromParams("ddtq1ack5", "845634458425448", "ZTt9tU5JtlAhH5pwfYIU7dMYmzU")
 	if err != nil {
 		log.Fatal(err)
 	}
